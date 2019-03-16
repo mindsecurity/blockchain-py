@@ -248,6 +248,7 @@ def register_nodes():
         'message': 'New nodes have been added',
         'total_nodes': list(blockchain.nodes),
     }
+    app.run(host='0.0.0.0', port=5001)
     return jsonify(response), 201
 
 
