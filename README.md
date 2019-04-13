@@ -34,3 +34,14 @@ This is what the request for a transaction will look like. It’s what the user 
  "amount": 5
 }
 ```
+
+---
+### Database
+Necessary setup a postgres database, with `db.ini` with credentials:
+```
+[postgresql]
+host=localhost
+database=db_name
+user=example_user
+password=example_pass
+```
