@@ -41,7 +41,9 @@ def connect(db_id, db_cnpj, db_name, db_email):
 
  # execute a statement
         print('Inserting data on PostgreSQL...')
-        sql = """ INSERT INTO companies ( id, cnpj, name, email ) VALUES ( %s, %s, '%s', '%s' )""" % (db_id, db_cnpj, db_name, db_email)
+        sql = """ INSERT INTO companies ( id, cnpj, name, email )
+                  VALUES ( %s, %s, '%s', '%s' )
+            """ % (db_id, db_cnpj, db_name, db_email)
 
         cur.execute(sql)
         conn.commit()
