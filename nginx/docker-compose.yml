@@ -1,0 +1,10 @@
+version: "3.0"
+services:
+  blockchain:
+    image: blockchain:v3
+  nginx:
+    image: nginx_dockerfile:latest
+    ports:
+      - 8888:80
+    depends_on:
+      - blockchain
