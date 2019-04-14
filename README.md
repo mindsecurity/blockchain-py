@@ -19,7 +19,13 @@ To accept a list of new nodes in the form of URLs
 ```
 /nodes/register
 ```
-To implement our Consensus Algorithm, which resolves any conflicts—to ensure a node has the correct chain.
+Example for body `POST`:
+```
+{
+	"nodes": "192.168.15.69:5001"
+}
+```
+To implement our Consensus Algorithm, which resolves any conflicts—to ensure a node has the correct chain. `GET`:
 ```
 /nodes/resolve
 ```
