@@ -1,11 +1,15 @@
 import hashlib
-import json
+import json, configparser
 from time import time
 from urllib.parse import urlparse
 from uuid import uuid4
 
 import requests
 from flask import Flask, jsonify, request
+
+config = configparser.ConfigParser()
+config.read("config.ini")
+IP = config.get("Server", "IP")
 
 
 class Blockchain:
@@ -160,7 +164,7 @@ class Blockchain:
 
          - Find a number p' such that hash(pp') contains leading 4 zeroes
          - Where p is the previous proof, and p' is the new proof
-         
+
         :param last_block: <dict> last Block
         :return: <int>
         """
@@ -298,4 +302,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     port = args.port
 
-    app.run(host='0.0.0.0', port=port)
+    app.run(host=IP, port=port)
