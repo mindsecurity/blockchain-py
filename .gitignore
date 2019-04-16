@@ -1,3 +1,3 @@
-db.ini
+db_postgresql/db.ini
 config.ini
 .scannerwork/
