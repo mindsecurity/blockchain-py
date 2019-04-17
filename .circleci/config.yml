@@ -10,10 +10,10 @@ jobs:
       - run: ls -lha && pwd
   test:
     docker:
-      - image: python:3.6-alpine
+      - image: centos:7
     steps:
       - checkout
-      - run: python blockchain.py & 
+      - run: python3 blockchain.py & 
       - run: curl -i http://localhost:5000/chain
 workflows:
   version: 2
