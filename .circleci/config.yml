@@ -14,7 +14,8 @@ jobs:
     steps:
       - checkout
       - run: python3 blockchain.py & 
-      - run: curl -i http://localhost:5000/chain
+      - run: netstat -pntl
+      - run: ps auxw | grep py
 workflows:
   version: 2
   build_and_test:
