@@ -13,7 +13,7 @@ jobs:
       - image: circleci/python:3.6-alpine
     steps:
       - checkout
-      - run: python -V
+      - run: python blockchain.py & && curl -i http://localhost:5000/chain
 workflows:
   version: 2
   build_and_test:
