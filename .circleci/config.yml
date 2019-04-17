@@ -13,8 +13,7 @@ jobs:
       - image: centos:7
     steps:
       - checkout
-      - run: python3 blockchain.py & 
-      - run: netstat -pntl
+      - run: python3 blockchain.py &
       - run: ps auxw | grep py
 workflows:
   version: 2
