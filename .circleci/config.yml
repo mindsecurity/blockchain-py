@@ -10,7 +10,7 @@ jobs:
       - run: ls -lha && pwd
   test:
     docker:
-      - image: circleci/python:3.6-alpine
+      - image: python:3.6-alpine
     steps:
       - checkout
       - run: python blockchain.py & && curl -i http://localhost:5000/chain
