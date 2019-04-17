@@ -13,7 +13,8 @@ jobs:
       - image: python:3.6-alpine
     steps:
       - checkout
-      - run: python blockchain.py & && curl -i http://localhost:5000/chain
+      - run: python blockchain.py & 
+      - run: curl -i http://localhost:5000/chain
 workflows:
   version: 2
   build_and_test:
