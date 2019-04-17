@@ -1,4 +1,4 @@
-import hashlib
+import hashlib, sqlite3
 import json, configparser
 from time import time
 from urllib.parse import urlparse
@@ -11,6 +11,19 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 IP = config.get("Server", "IP")
 
+conn = sqlite3.connect('blockchain.db')
+cur = conn.cursor()
+
+INSERT = cur.execute("""
+                    INSERT INTO chain ( id, texts )
+                    VALUES ( ?, ? )
+                    """, (blockchain.chain, timestamp))
+
+CONSULT = cur.execute("SELECT * FROM chain")
+resultado = cur.fetchall()
+
+for row in resultado:
+    print("Nome: %s\nText: %s" % (row))
 
 class Blockchain:
     def __init__(self):

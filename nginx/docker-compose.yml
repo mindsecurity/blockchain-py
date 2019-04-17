@@ -1,10 +1,11 @@
 version: "3.0"
 services:
   blockchain:
-    image: blockchain:v3
+    build: ../
   nginx:
-    image: nginx_dockerfile:latest
+    build: .
+    restart: always
     ports:
-      - 8888:80
+      - 80:80
     depends_on:
       - blockchain

@@ -1,3 +1,6 @@
 db_postgresql/db.ini
+blockchain.db
+nosetests.xml
+__pycache__/
 config.ini
 .scannerwork/
