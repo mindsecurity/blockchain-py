@@ -54,7 +54,7 @@ password=example_pass
 
 ---
 ### Docker
-Necessary build the personalized images from `Dockerfile`
+Build personalized images from `Dockerfile`
 ```
 docker build -t "blockchain:v3" .
 docker build -t "block_nginx" nginx/Dockerfile
